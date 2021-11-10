@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import DownArrowImg from "../images/down-arrow.svg";
+import Fade from "react-reveal/Fade";
 
 const Wrap = styled.div`
   width: 100vw;
@@ -68,15 +69,19 @@ export const Sektion = ({
 }) => {
   return (
     <Wrap bgImage={backgroundImg}>
-      <ItemText>
-        <h1>{titel}</h1>
-        <p>{beschreibung}</p>
-      </ItemText>
+      <Fade bottom>
+        <ItemText>
+          <h1>{titel}</h1>
+          <p>{beschreibung}</p>
+        </ItemText>
+      </Fade>
       <Buttons>
-        <ButtonGroup>
-          <LeftButton>{leftBtnText}</LeftButton>
-          {rightBtnText && <RightButton>{rightBtnText}</RightButton>}
-        </ButtonGroup>
+        <Fade bottom>
+          <ButtonGroup>
+            <LeftButton>{leftBtnText}</LeftButton>
+            {rightBtnText && <RightButton>{rightBtnText}</RightButton>}
+          </ButtonGroup>
+        </Fade>
         <DownArrow src={DownArrowImg} />
       </Buttons>
     </Wrap>
