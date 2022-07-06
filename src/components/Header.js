@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Logo from "../images/logo.svg";
+import LogoImg from "../images/Tesla_Logo.jpeg";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { selectCars } from "../features/car/carSlice";
@@ -12,12 +12,20 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 20px;
-  /* top: 0;
+  top: 0;
   left: 0;
-  right: 0; */
+  right: 0;
+  padding: 0 20px;
   width: 100%;
   z-index: 10;
+`;
+
+const Logo = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  img {
+    width: 150px;
+  }
 `;
 
 const Menu = styled.div`
@@ -95,9 +103,9 @@ export const Header = () => {
 
   return (
     <Container>
-      <a>
-        <img src={Logo} alt="Tesla Logo" />
-      </a>
+      <Logo>
+        <img src={LogoImg} alt="Tesla Logo" />
+      </Logo>
       <Menu>
         {cars &&
           cars.map((car, index) => (

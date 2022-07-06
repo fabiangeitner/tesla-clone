@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import DownArrowImg from "../images/down-arrow.svg";
+import DownArrowImg from "../images/down-arrow.png";
 import Fade from "react-reveal/Fade";
 
 const Wrap = styled.div`
